@@ -3,6 +3,14 @@ const app=express();
 require('dotenv').config();
 const connectDB =require('./config/db')
 const path=require('path');
+const cors=require("cors");
+
+// cors
+const corsOptions={
+    origin:process.env.ALLOWED.CLIENTS.split(',')
+}
+
+app.use(cors(corsOptions));
 
 app.use(express.static(path.join(__dirname,'/public')))
 app.use(express.json())
