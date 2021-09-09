@@ -6,11 +6,11 @@ const path=require('path');
 const cors=require("cors");
 
 // cors
-const corsOptions={
-    origin:process.env.ALLOWED.CLIENTS.split(',')
-}
+// const corsOptions={
+//     origin:process.env.ALLOWED.CLIENTS.split(',')
+// }
 
-app.use(cors(corsOptions));
+app.use(cors());
 
 app.use(express.static(path.join(__dirname,'/public')))
 app.use(express.json())
